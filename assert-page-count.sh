@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Checks if a document has a given number of pages.
+
+# Usage: ./assert-page-count.sh document.pdf 42
+
 PAGENUM=$(pdftk $1 dump_data | grep "NumberOfPages" | tr -d " " | cut -d: -f2-)
 
 if [ $PAGENUM -ne $2 ]

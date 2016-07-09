@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# This script tests if a pattern is absent.
+# Useful to check for ??'s if a reference could not be found.
+
+# Usage: ./assert-absence.sh "\?\?" document.pdf
+
 pattern=$1
 filename=$2
 
