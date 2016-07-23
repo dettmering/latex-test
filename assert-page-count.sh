@@ -4,9 +4,9 @@
 
 # Usage: ./assert-page-count.sh document.pdf 42
 
-PAGENUM=$(pdftk $1 dump_data | grep "NumberOfPages" | tr -d " " | cut -d: -f2-)
+PAGENUM=$(pdftk $1 dump_data | grep "NumberOfPages" | tr -d " ")
 
-if [ $PAGENUM -ne $2 ]
+if [ "$PAGENUM" != "NumberOfPages:$2" ]
 then
   echo "$1 should have $2 pages, but has $PAGENUM."
   exit 1
