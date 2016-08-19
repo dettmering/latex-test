@@ -5,6 +5,7 @@ ADD *.sh /
 
 RUN apt-get update &&\
     apt-get install -y \
+        pandoc \
         zip \
         pdfgrep \
         pdftk &&\
